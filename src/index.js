@@ -1,9 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { App } from './app'
-import './styles/main.css'
+import { ThemeProvider } from 'styled-components'
+import { theme } from './theme'
+import { Login } from './components/login'
+
 
 const mountNode = document.getElementById('mountNode')
 
-ReactDOM.render(<App />, mountNode)
-
+ReactDOM.render(
+    <ThemeProvider theme={theme}>
+        <Login />
+    </ThemeProvider>,
+    mountNode)
